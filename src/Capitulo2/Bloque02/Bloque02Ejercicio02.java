@@ -1,4 +1,4 @@
-package Capitulo2;
+package Capitulo2.Bloque02;
 
 import javax.swing.JOptionPane;
 
