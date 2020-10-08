@@ -1,8 +1,8 @@
-package Capitulo2.Bloque01;
+package capitulo2.bloque01;
 
 import javax.swing.JOptionPane;
 
-public class Bloque01Ejercicio06 {
+public class Bloque01Ejercicio03 {
 
 	public static void main(String[] args) {
 		
