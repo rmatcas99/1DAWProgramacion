@@ -185,14 +185,14 @@ public class Capitulo1_ejercicios {
 	}
 
 	public static void main(String[] args) {
-		Ejercicio01();
-		Ejercicio02();
-		Ejercicio03();
-		Ejercicio04();
-		Ejercicio05();
-		Ejercicio06();
-		Ejercicio07();
-		Ejercicio08();
+		//Ejercicio01();
+		//Ejercicio02();
+		//Ejercicio03();
+		//Ejercicio04();
+		//Ejercicio05();
+		//Ejercicio06();
+		//Ejercicio07();
+		//Ejercicio08();
 	}
 
 }
