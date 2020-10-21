@@ -151,8 +151,80 @@ public class Bloque02 {
 		 * Realiza un ejercicio igual al anterior, pero en el que el usuario pueda
 		 * indicar la cantidad de posiciones que deseamos desplazar.
 		 */
+
+		int array[] = new int[5];
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 100);
+
+			System.out.print(array[i] + " ");
+		}
+
+		System.out.println();
+
+		// Repetir el bucle tantas veces como quiera el usuario
+
+		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduce cuantas posiciones quieres desplazar: "));
+
+		for (int j = 0; j < num; j++) {
+
+			int aux = array[array.length - 1];
+
+			for (int i = array.length - 1; i > 0; i--) {
+
+				array[i] = array[i - 1];
+			}
+
+			array[0] = aux;
+
+		}
+
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+
+		System.out.println();
+	}
+
+	private static void Ejercicio06() {
+
+		/*
+		 * Realiza un ejercicio igual al anterior, en el que el usuario también pueda
+		 * deteminar la dirección del movimiento.
+		 */
 		
-		
+		int array[] = new int[5];
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 100);
+
+			System.out.print(array[i] + " ");
+		}
+
+		System.out.println();
+
+		// Repetir el bucle tantas veces como quiera el usuario
+
+		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduce cuantas posiciones quieres desplazar: "));
+
+		for (int j = 0; j < num; j++) {
+
+			int aux = array[array.length - 1];
+
+			for (int i = array.length - 1; i > 0; i--) {
+
+				array[i] = array[i - 1];
+			}
+
+			array[0] = aux;
+
+		}
+
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
@@ -160,7 +232,8 @@ public class Bloque02 {
 		// Ejercicio02();
 		// Ejercicio03();
 		// Ejercicio04();
-		Ejercicio05();
+		// Ejercicio05();
+		Ejercicio06();
 
 	}
 
