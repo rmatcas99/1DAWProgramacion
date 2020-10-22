@@ -141,6 +141,21 @@ public class Bloque02 {
 			System.out.print(array[i] + " ");
 		}
 
+		// A continuación 1 a la izquierda
+
+//		int aux = array[0];
+//
+//		for (int i = 1; i < array.length; i++) {
+//
+//			array[i - 1] = array[i];
+//		}
+//
+//		array[array.length - 1] = aux;
+//
+//		for (int i = 0; i < array.length; i++) {
+//			System.out.print(array[i] + " ");
+//		}
+
 		System.out.println();
 
 	}
@@ -192,7 +207,7 @@ public class Bloque02 {
 		 * Realiza un ejercicio igual al anterior, en el que el usuario también pueda
 		 * deteminar la dirección del movimiento.
 		 */
-		
+
 		int array[] = new int[5];
 
 		for (int i = 0; i < array.length; i++) {
@@ -201,30 +216,57 @@ public class Bloque02 {
 			System.out.print(array[i] + " ");
 		}
 
+		int num = Integer.parseInt(JOptionPane
+				.showInputDialog("Introduce hacia qué dirección quieres ir: " + "\n 1. Derecha" + "\n 2. Izquierda"));
+
 		System.out.println();
 
-		// Repetir el bucle tantas veces como quiera el usuario
+		if (num == 1) {
 
-		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduce cuantas posiciones quieres desplazar: "));
+			int numDer = Integer
+					.parseInt(JOptionPane.showInputDialog("Introduce cuantas posiciones quieres desplazar: "));
+			for (int j = 0; j < numDer; j++) {
 
-		for (int j = 0; j < num; j++) {
+				int aux = array[array.length - 1];
 
-			int aux = array[array.length - 1];
+				for (int i = array.length - 1; i > 0; i--) {
 
-			for (int i = array.length - 1; i > 0; i--) {
+					array[i] = array[i - 1];
+				}
 
-				array[i] = array[i - 1];
+				array[0] = aux;
+
 			}
 
-			array[0] = aux;
+			for (int i = 0; i < array.length; i++) {
+				System.out.print(array[i] + " ");
+			}
 
+			System.out.println();
+		} else {
+
+			int numIzq = Integer
+					.parseInt(JOptionPane.showInputDialog("Introduce cuantas posiciones quieres desplazar: "));
+
+			for (int j = 0; j < numIzq; j++) {
+
+				int aux = array[0];
+
+				for (int i = 1; i < array.length; i++) {
+
+					array[i - 1] = array[i];
+				}
+
+				array[array.length - 1] = aux;
+			}
+
+			for (int i = 0; i < array.length; i++) {
+				System.out.print(array[i] + " ");
+			}
+
+			System.out.println();
 		}
 
-		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + " ");
-		}
-
-		System.out.println();
 	}
 
 	public static void main(String[] args) {
