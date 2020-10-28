@@ -125,20 +125,14 @@ public class Bloque03 {
 	 */
 
 	private static void Ejercicio06() {
-		int num = -1;
-		while (num != 0) {
+
+		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduce un valor: "));
+		for (; num != 0;) {
+			for (int j = 0; j < 11; j++) {
+				System.out.println(num + " * " + j + " = " + (num * j));
+			}
 			num = Integer.parseInt(JOptionPane.showInputDialog("Introduce un valor: "));
-			System.out.println("0 * " + num + " = " + 0 * num);
-			System.out.println("1 * " + num + " = " + 1 * num);
-			System.out.println("2 * " + num + " = " + 2 * num);
-			System.out.println("3 * " + num + " = " + 3 * num);
-			System.out.println("4 * " + num + " = " + 4 * num);
-			System.out.println("5 * " + num + " = " + 5 * num);
-			System.out.println("6 * " + num + " = " + 6 * num);
-			System.out.println("7 * " + num + " = " + 7 * num);
-			System.out.println("8 * " + num + " = " + 8 * num);
-			System.out.println("9 * " + num + " = " + 9 * num);
-			System.out.println("10 * " + num + " = " + 10 * num);
+			System.out.println();
 		}
 	}
 
@@ -147,17 +141,17 @@ public class Bloque03 {
 	 * 0 (cero). Al finalizar se debe imprimir en pantalla cuantos son positivos y
 	 * cuantos negativos. No debes tener en cuenta el 0 (cero).
 	 */
-	
+
 	private static void Ejercicio07() {
 		int num = -1;
 		int numPos = 0, numNeg = 0;
-		
+
 		while (num != 0) {
 			num = Integer.parseInt(JOptionPane.showInputDialog("Introduce un valor: "));
 			if (num > 0) {
 				numPos += 1;
 			}
-			
+
 			if (0 < num) {
 				numNeg += 1;
 			}
@@ -171,7 +165,7 @@ public class Bloque03 {
 		// Ejercicio03();
 		// Ejercicio04();
 		// Ejercicio05();
-		// Ejercicio06();
+		Ejercicio06();
 		// Ejercicio07();
 	}
 
