@@ -153,6 +153,27 @@ public class Ejercicios {
 		}
 	}
 
+	public static void recorte(int array[], int primer, int ultimo) {
+		int diferencia = ultimo - primer;
+		int recortado[] = new int[diferencia + 1];
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random() * 10);
+			System.out.print(array[i] + " ");
+		}
+
+		System.out.println();
+
+		int aux = (array.length - 1) - ultimo;
+		int x = (array.length - 1) - aux;
+		for (int j = 0; j < recortado.length; j++) {
+			for (int i = primer; i < x; i++) {
+				recortado[j] = array[i];
+				System.out.print(recortado[j] + " ");
+			}
+		}
+	}
+
 	public static void recursividad(int num) {
 		if (num >= 1) {
 			recursividad(num - 1);
@@ -163,7 +184,7 @@ public class Ejercicios {
 	public static void main(String[] args) {
 
 		// Ejercicio1
-		// System.out.println(media(5, 6, 7, 36.5f));
+//		 System.out.println(media(5, 6, 7, 36.5f));
 
 		// Ejercicio2
 //		int Min = Integer.parseInt(JOptionPane.showInputDialog("Introduce un mínimo: "));
@@ -199,9 +220,13 @@ public class Ejercicios {
 //		imprimeArray(array);
 
 		// Ejercicio9
+		int primerIndice = Integer.parseInt(JOptionPane.showInputDialog("Introduce el primer indice: "));
+		int ultimoIndice = Integer.parseInt(JOptionPane.showInputDialog("Introduce el ultimo indice: "));
+		int array[] = new int[10];
+		recorte(array, primerIndice, ultimoIndice);
 
 		// Ejercicio10
-		recursividad(100);
+//		recursividad(100);
 
 	}
 
