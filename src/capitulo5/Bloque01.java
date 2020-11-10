@@ -46,7 +46,7 @@ public class Bloque01 {
 
 		for (int i = 0; i < array.length; i++) {
 			array[i] = (int) Math.round(Math.random() * (limSup - limInf) + limInf);
-			System.out.println(array[i]);
+			System.out.print(array[i] + " ");
 		}
 	}
 
@@ -140,11 +140,11 @@ public class Bloque01 {
 
 	public static void main(String[] args) {
 		// Ejercicio00();
-		// Ejercicio01();
+		 Ejercicio01();
 		// Ejercicio02();
 		// Ejercicio03();
 		// Ejercicio04();
-		Ejercicio05();
+		// Ejercicio05();
 
 	}
 
