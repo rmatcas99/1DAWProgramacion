@@ -233,11 +233,11 @@ public class Ejercicios {
 
 		int aux = (array.length - 1) - ultimo;
 		int x = (array.length - 1) - aux;
-		for (int j = 0; j < recortado.length; j++) {
-			for (int i = primer; i < x; i++) {
-				recortado[j] = array[i];
-				System.out.print(recortado[j] + " ");
-			}
+		for (int i = primer; i <= x; i++) {
+			int j = 0;
+			recortado[j] = array[i];
+			System.out.print(recortado[j] + " ");
+			j++;
 		}
 	}
 
@@ -253,9 +253,6 @@ public class Ejercicios {
 		}
 	}
 
-	
-	
-	
 	public static void main(String[] args) {
 
 		// Ejercicio1
@@ -291,7 +288,7 @@ public class Ejercicios {
 		fibonacci(longitud);
 
 		// Ejercicio8
-		int array[] = new int[] {3, 4, 5};
+		int array[] = new int[] { 3, 4, 5 };
 		imprimeArray(array);
 
 		// Ejercicio9
