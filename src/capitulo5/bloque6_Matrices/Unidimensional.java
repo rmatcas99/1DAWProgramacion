@@ -8,9 +8,10 @@ public class Unidimensional {
 		 * de la matriz. El método recibirá una matriz y devolverá un array.
 		 */
 		
-		int matriz[][] = new int[3][3];
-		RellenaMatriz.rellenaMatriz(matriz);
-		ImprimeMatriz.imprimeMatriz(matriz);
+		int matriz[][] = {{3,2, 5}, {5, 8, 9}};
+		
+		//RellenaMatriz.rellenaMatriz(matriz);
+		//ImprimeMatriz.imprimeMatriz(matriz);
 		
 		System.out.println();
 		
@@ -32,7 +33,7 @@ public class Unidimensional {
 		
 		//Le asignamos a el array los valores de la matriz
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
+			for (int j = 0; j < matriz[i].length; j++) {
 				array[i] = matriz[i][j];
 				System.out.print(array[i] + " ");
 			}
