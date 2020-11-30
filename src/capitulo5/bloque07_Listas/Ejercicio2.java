@@ -40,7 +40,7 @@ public class Ejercicio2 {
 						.parseInt(JOptionPane.showInputDialog("Introduce el valor mínimo que contendrá la lista: "));
 				max = Integer
 						.parseInt(JOptionPane.showInputDialog("Introduce el valor máximo que contendrá la lista: "));
-				añadirValores(lista, nuevos, posicion, min, max);
+				lista = añadirValores(lista, nuevos, posicion, min, max);
 				break;
 
 			case 4:
@@ -48,7 +48,7 @@ public class Ejercicio2 {
 						.parseInt(JOptionPane.showInputDialog("Introduce el valor mínimo del intervalo a eliminar: "));
 				max = Integer
 						.parseInt(JOptionPane.showInputDialog("Introduce el valor máximo del intervalo a eliminar: "));
-				eliminarIntervalo(lista, min, max);
+				lista = eliminarIntervalo(lista, min, max);
 				break;
 
 			case 5:
@@ -144,8 +144,8 @@ public class Ejercicio2 {
 			lista2.add((int) Math.round(Math.random() * (max - min) + min));
 		}
 
-		for (int i = posicion; i < lista.size(); i++) {
-			lista.add(i, lista2.get(i));
+		for (int i = 0; i < lista2.size(); i++) {
+			lista.add(posicion, lista2.get(i));
 		}
 
 		return lista;
