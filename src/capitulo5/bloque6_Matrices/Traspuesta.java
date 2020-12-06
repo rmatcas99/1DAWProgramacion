@@ -28,7 +28,6 @@ public class Traspuesta {
 				traspuesta[i][j] = matriz[j][i];
 			}
 		}
-
 		return traspuesta;
 	}
 
