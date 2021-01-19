@@ -1,4 +1,4 @@
-package capitulo4;
+package capitulo4.ventanaConCanvas;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
@@ -31,6 +31,8 @@ public class Cuadro extends Canvas {
 		
 		g.setColor(Color.GREEN);
 		g.fillOval(500, 500, 120, 120);
+		
+		g.setColor(Color.RED);
 	}
 
 }

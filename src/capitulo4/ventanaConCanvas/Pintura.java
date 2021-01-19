@@ -1,4 +1,4 @@
-package capitulo4;
+package capitulo4.ventanaConCanvas;
 
 import java.awt.Color;
 import java.awt.Graphics;
