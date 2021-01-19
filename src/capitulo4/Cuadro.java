@@ -30,7 +30,7 @@ public class Cuadro extends Canvas {
 		g.fillRect(50, 50, 130, 120);
 		
 		g.setColor(Color.GREEN);
-		g.fillOval(500, 500, 80, 120);
+		g.fillOval(500, 500, 120, 120);
 	}
 
 }
