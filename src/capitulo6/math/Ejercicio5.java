@@ -3,33 +3,23 @@ package capitulo6.math;
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
-		double x = 0.0001;
+		
+		double x = 0.00001;
 		double y, y1, y2, fin = 0;
 
-//		y = x * Math.sin(x);
-//		System.out.println(y);
-//		y1 = (x - 0.0001) * Math.sin(x);
-//		System.out.println(y1);
-//		y2 = (x + 0.0001) * Math.sin(x);
-//		System.out.println(y2);
-		
-		
 		do {
 			y = x * Math.sin(x);
-			//System.out.println(y);
-			y1 = (x - 0.0001) * Math.sin(x);
-			//System.out.println(y);
-			y2 = (x + 0.0001) * Math.sin(x);
-			//System.out.println(y);
+			y1 = (x - 0.00001) * Math.sin(x - 0.00001);
+			y2 = (x + 0.00001) * Math.sin(x + 0.00001);
 
 			if (y > y1 && y > y2) {
-				System.out.println(y);
+				System.out.println("x: " + x +"\ty: " + y);
 				fin++;
 			}
 			
-			x += 0.001;
+			x += 0.00001;
 
-		} while (fin < 4);
+		} while (fin < 5);
 
 	}
 
