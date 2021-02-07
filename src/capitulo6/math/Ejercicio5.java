@@ -3,7 +3,7 @@ package capitulo6.math;
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
-		
+
 		double x = 0.00001;
 		double y, y1, y2, fin = 0;
 
