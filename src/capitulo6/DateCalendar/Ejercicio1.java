@@ -1,5 +1,7 @@
 package capitulo6.DateCalendar;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio1 {
 
 	public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class Ejercicio1 {
 		//- Obtén en pantalla los siguientes campos: año, mes, día, hora, minuto y segundo. Cada campo debe aparecer en una línea de la consola. Debes obtener cada campo desde el objeto java.util.Date y desde el objeto Calendar. Es decir, cada campo debe ser obtenido dos veces en pantalla.
 		//- Utiliza el objeto de tipo Calendar para obtener nuevas fechas e imprimirlas en pantalla: suma 3 días, resta 2 semanas, suma 300 días, suma 4 años.
 
+		
+		String fecha = JOptionPane.showInputDialog("Introduce una fecha");
+		
+		
 				
 	}
 
