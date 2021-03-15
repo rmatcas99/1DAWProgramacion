@@ -12,18 +12,17 @@ import javax.swing.JOptionPane;
 public class Ejercicio1 {
 
 	private static Connection conexion = null;
-	
+
 	public static void main(String[] args) {
 
 		try {
 			conexion = getConexion();
-		}
-		catch (SQLException ex) {
+		} catch (SQLException ex) {
 			System.out.println("Error en la ejecuci�n SQL: " + ex.getMessage());
 		}
-		
+
 		menu();
-		
+
 	}
 
 	private static void menu() {
@@ -73,7 +72,7 @@ public class Ejercicio1 {
 			}
 
 		} while (opcionUsuario != 0);
-		
+
 		try {
 			conexion.close();
 		} catch (SQLException e) {
@@ -83,15 +82,15 @@ public class Ejercicio1 {
 	}
 
 	public static void mostrarFabricantes() throws SQLException {
-		Statement s = (Statement) conexion.createStatement(); 
-		ResultSet rs = s.executeQuery ("select * from fabricante");
-				
-		ResultSetMetaData rsmd= rs.getMetaData();
-	   
+		Statement s = (Statement) conexion.createStatement();
+		ResultSet rs = s.executeQuery("select * from fabricante");
+
+		ResultSetMetaData rsmd = rs.getMetaData();
+
 		System.out.println();
 		System.out.println("--------------------------------------------------------------");
 		System.out.println();
-		
+
 		while (rs.next()) {
 			for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 				if (rsmd.getColumnTypeName(i).equalsIgnoreCase("INT")) {
@@ -109,50 +108,67 @@ public class Ejercicio1 {
 				if (rsmd.getColumnTypeName(i).equalsIgnoreCase("FLOAT")) {
 					System.out.print(rs.getFloat(rsmd.getColumnLabel(i)) + "\t");
 				}
-				
+
 			}
-			System.out.println("\n");			
+			System.out.println("\n");
 		}
-				
+
 		rs.close();
 		s.close();
 	}
-	
+
 	public static void borrarFabricantes() throws SQLException {
 		int id = Integer.parseInt(JOptionPane.showInputDialog("Introduce el id"));
-		
+
 		mostrarFabricantes();
 		Statement s = (Statement) conexion.createStatement();
 		String sql = "delete from tutorialjavacoches.fabricante where id= " + id;
 		s.executeUpdate(sql);
-		
-	   
+
 		System.out.println();
 		System.out.println("--------------------------------------------------------------");
 		System.out.println();
-		
+
 		s.close();
 	}
-	
+
 	public static void crearFabricantes() throws SQLException {
-		
+
 		String CIF = JOptionPane.showInputDialog("Introduce el CIF");
 		String nombre = JOptionPane.showInputDialog("Introduce el nombre");
-		
+
 		int id = maxIdEnTabla(conexion, "fabricante");
-		
+
 		Statement s = (Statement) conexion.createStatement();
-		String sql = "insert into tutorialjavacoches.fabricante (id, CIF, nombre) values ( " + (id + 1) + ", " + CIF + ", '" + nombre + "')";
+		String sql = "insert into tutorialjavacoches.fabricante (id, CIF, nombre) values ( " + (id + 1) + ", " + CIF
+				+ ", '" + nombre + "')";
 		s.executeUpdate(sql);
-		
-	   
+
 		System.out.println();
 		System.out.println("--------------------------------------------------------------");
 		System.out.println();
-		
+
 		s.close();
 	}
-	
+
+	public static void cambiarFabricantes() throws SQLException {
+		mostrarFabricantes();
+		int id = Integer.parseInt(JOptionPane.showInputDialog("Introduce el id del que quieres cambiar"));
+		
+		String CIF = JOptionPane.showInputDialog("Introduce el nuevo CIF");
+		String nombre = JOptionPane.showInputDialog("Introduce el nuevo nombre");
+
+		Statement s = (Statement) conexion.createStatement();
+		String sql = "update tutorialjavacoches.fabricante set CIF='" + CIF + "' + nombre='" + nombre + "' where id=" + id;
+		s.executeUpdate(sql);
+
+		System.out.println();
+		System.out.println("--------------------------------------------------------------");
+		System.out.println();
+
+		s.close();
+	}
+
 	public static Connection getConexion() throws SQLException {
 		// Si es la primera vez que accedemos a la conexi�n, debemos instanciarla
 		if (conexion == null) {
@@ -177,14 +193,14 @@ public class Ejercicio1 {
 			System.out.println("Imposible acceder al driver Mysql");
 		}
 	}
-	
-	private static int maxIdEnTabla (Connection conn, String tabla) throws SQLException {
+
+	private static int maxIdEnTabla(Connection conn, String tabla) throws SQLException {
 		Statement s = (Statement) conn.createStatement();
 
 		String sql = "select max(id) from tutorialjavacoches." + tabla;
 		ResultSet rs = s.executeQuery(sql);
-		int max = 1; 
-		if (rs.next() ) {
+		int max = 1;
+		if (rs.next()) {
 			max = rs.getInt(1);
 		}
 		rs.close();
