@@ -163,7 +163,7 @@ public class Ejercicio1 {
 		String nombre = JOptionPane.showInputDialog("Introduce el nuevo nombre");
 
 		Statement s = (Statement) conexion.createStatement();
-		String sql = "UPDATE tutorialjavacoches.fabricante SET cif='" + CIF + "', + nombre='" + nombre + "' where id=" + id;
+		String sql = "UPDATE tutorialjavacoches.fabricante SET cif= '" + CIF + "', nombre= '" + nombre + "' where id=" + id;
 		s.executeUpdate(sql);
 
 		System.out.println();
