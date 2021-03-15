@@ -67,7 +67,11 @@ public class Ejercicio1 {
 				}
 				break;
 			case 4:
-
+				try {
+					cambiarFabricantes();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 				break;
 			}
 
@@ -140,8 +144,8 @@ public class Ejercicio1 {
 		int id = maxIdEnTabla(conexion, "fabricante");
 
 		Statement s = (Statement) conexion.createStatement();
-		String sql = "insert into tutorialjavacoches.fabricante (id, CIF, nombre) values ( " + (id + 1) + ", " + CIF
-				+ ", '" + nombre + "')";
+		String sql = "insert into tutorialjavacoches.fabricante (id, CIF, nombre) values ( " + (id + 1) + ", '" + CIF
+				+ "', '" + nombre + "')";
 		s.executeUpdate(sql);
 
 		System.out.println();
@@ -159,7 +163,7 @@ public class Ejercicio1 {
 		String nombre = JOptionPane.showInputDialog("Introduce el nuevo nombre");
 
 		Statement s = (Statement) conexion.createStatement();
-		String sql = "update tutorialjavacoches.fabricante set CIF='" + CIF + "' + nombre='" + nombre + "' where id=" + id;
+		String sql = "UPDATE tutorialjavacoches.fabricante SET cif='" + CIF + "', + nombre='" + nombre + "' where id=" + id;
 		s.executeUpdate(sql);
 
 		System.out.println();
