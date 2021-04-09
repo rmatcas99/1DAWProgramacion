@@ -23,8 +23,8 @@ public class Coche {
 
 	@Override
 	public String toString() {
-		return "Coche [id=" + id + ", idFabricante=" + idFabricante + ", bastidor=" + bastidor + ", modelo=" + modelo
-				+ ", color=" + color + "]";
+		// pongo el bastidor porque es el numero que identifica el coche y no hay otro igual
+		return bastidor;
 	}
 
 	/**

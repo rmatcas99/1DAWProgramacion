@@ -1,74 +1,73 @@
 package gestionVentaCoches;
 
 import java.awt.BorderLayout;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import gestionVentaCoches.Paneles.MenuBar;
+import gestionVentaCoches.Paneles.PanelCliente;
+import gestionVentaCoches.Paneles.PanelCoches;
+import gestionVentaCoches.Paneles.PanelConcesionario;
+import gestionVentaCoches.Paneles.PanelFabricantes;
+import gestionVentaCoches.Paneles.PanelVenta;
+
 public class VentanaPrincipal extends JFrame {
 
-	private JTabbedPane jTabbedPane = null;
-	
+	private JTabbedPane JTabbedPane = null;
+
 	private static VentanaPrincipal instance = null;
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public static VentanaPrincipal getInstance () {
+
+	public static VentanaPrincipal getInstance() {
 		if (instance == null) {
 			instance = new VentanaPrincipal();
 		}
 		return instance;
 	}
-	
+
 	/**
 	 * 
 	 */
 	public VentanaPrincipal() {
-		super("Gestión de venta de coches");
+		super("Gesti�n de ventas de coches");
 		this.setBounds(0, 0, 600, 400);
-		
+
 		this.setJMenuBar(new MenuBar());
-		
+
 		this.setLayout(new BorderLayout());
 		this.add(getPanelPrincipal(), BorderLayout.CENTER);
+
 	}
 
 	/**
 	 * 
 	 * @return
 	 */
-	private JTabbedPane getPanelPrincipal() {
-		jTabbedPane = new JTabbedPane();
-		
-		jTabbedPane.add("Fabricantes", new PanelFabricantes());
-		jTabbedPane.add("Coches", new PanelCoches());
-		
-		return jTabbedPane;
-	}
-	
-	
-	
-	
-	
-	/**
-	 * @return the jTabbedPane
-	 */
-	public JTabbedPane getjTabbedPane() {
-		return jTabbedPane;
+	public JTabbedPane getPanelPrincipal() {
+		JTabbedPane = new JTabbedPane();
+
+		JTabbedPane.add("Fabricantes", new PanelFabricantes());
+		JTabbedPane.add("Coches", new PanelCoches());
+		JTabbedPane.add("Clientes", new PanelCliente());
+		JTabbedPane.add("Concesionario", new PanelConcesionario());
+		JTabbedPane.add("Ventas", new PanelVenta());
+
+		return JTabbedPane;
 	}
 
+	public static void main(String[] args) {
+
+		VentanaPrincipal.getInstance().setVisible(true);
+
+	}
 
 	/**
 	 * 
-	 * @param args
+	 * @return to JTabbedPane
 	 */
-	public static void main(String[] args) {
-		VentanaPrincipal.getInstance().setVisible(true);
+	public JTabbedPane getJTabbedPane() {
+		return JTabbedPane;
 	}
 
 }

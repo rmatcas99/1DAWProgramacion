@@ -6,7 +6,9 @@ public class Fabricante {
 	private String cif;
 	private String nombre;
 	
+	
 	public Fabricante() {
+		
 		// TODO Auto-generated constructor stub
 	}
 
@@ -16,53 +18,61 @@ public class Fabricante {
 		this.cif = cif;
 		this.nombre = nombre;
 	}
-
-	@Override
-	public String toString() {
-		return this.nombre;
-	}
+	
+	
 
 	/**
-	 * @return the id
+	 * 
+	 * @return
 	 */
 	public int getId() {
 		return id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * 
+	 * @param id
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
 	/**
-	 * @return the cif
+	 * 
+	 * @return
 	 */
 	public String getCif() {
 		return cif;
 	}
 
 	/**
-	 * @param cif the cif to set
+	 * 
+	 * @param cif
 	 */
 	public void setCif(String cif) {
 		this.cif = cif;
 	}
 
+
 	/**
-	 * @return the nombre
+	 * 
+	 * @return
 	 */
 	public String getNombre() {
 		return nombre;
 	}
-
+	
 	/**
-	 * @param nombre the nombre to set
+	 * 
+	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	
+	@Override
+	public String toString() {
+		return this.getNombre();
+	}
+
 }

@@ -4,18 +4,21 @@ import java.util.Date;
 
 public class Cliente {
 
+
 	private int id;
 	private boolean activo;
 	private String nombre;
 	private String apellidos;
 	private String localidad;
 	private Date fechaNacimiento;
-	private String dniNie;
+	private String dniNIE;
 	
-	
+	public Cliente() {
+		
+	}
 	
 	public Cliente(int id, boolean activo, String nombre, String apellidos, String localidad, Date fechaNacimiento,
-			String dniNie) {
+			String dniNIE) {
 		super();
 		this.id = id;
 		this.activo = activo;
@@ -23,11 +26,7 @@ public class Cliente {
 		this.apellidos = apellidos;
 		this.localidad = localidad;
 		this.fechaNacimiento = fechaNacimiento;
-		this.dniNie = dniNie;
-	}
-
-	public Cliente() {
-		// TODO Auto-generated constructor stub
+		this.dniNIE = dniNIE;
 	}
 
 	public int getId() {
@@ -38,13 +37,6 @@ public class Cliente {
 		this.id = id;
 	}
 
-	public boolean isActivo() {
-		return activo;
-	}
-
-	public void setActivo(boolean activo) {
-		this.activo = activo;
-	}
 
 	public String getNombre() {
 		return nombre;
@@ -78,18 +70,27 @@ public class Cliente {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getDniNie() {
-		return dniNie;
+	public String getDniNIE() {
+		return dniNIE;
 	}
 
-	public void setDniNie(String dniNie) {
-		this.dniNie = dniNie;
+	public void setDniNIE(String dniNIE) {
+		this.dniNIE = dniNIE;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", activo=" + activo + ", nombre=" + nombre + ", apellidos=" + apellidos
-				+ ", localidad=" + localidad + ", fechaNacimiento=" + fechaNacimiento + ", dniNie=" + dniNie + "]";
+		return dniNIE;
 	}
-
+	
+	
+	
 }

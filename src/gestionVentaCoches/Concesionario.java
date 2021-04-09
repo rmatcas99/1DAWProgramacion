@@ -1,22 +1,23 @@
 package gestionVentaCoches;
 
 public class Concesionario {
-	
 	private int id;
 	private String cif;
 	private String nombre;
 	private String localidad;
-
-	public Concesionario() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
+	
 	public Concesionario(int id, String cif, String nombre, String localidad) {
 		super();
 		this.id = id;
 		this.cif = cif;
 		this.nombre = nombre;
 		this.localidad = localidad;
+	}
+
+
+	public Concesionario() {
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -62,9 +63,7 @@ public class Concesionario {
 
 	@Override
 	public String toString() {
-		return "Concesionario [id=" + id + ", cif=" + cif + ", nombre=" + nombre + ", localidad=" + localidad + "]";
+		return cif;
 	}
 
-	
-	
 }
